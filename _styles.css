@@ -1,0 +1,233 @@
+body {
+    background: url('/src/assets/background.svg') no-repeat center top/cover;
+    color: whitesmoke;
+    font-family: Arial, Helvetica, sans-serif;
+    text-shadow: 2px 2px 5px #0000FF;
+}
+a:link {
+    color: whitesmoke;
+    background-color: transparent;
+    text-decoration: none;
+    border-radius: 10px;
+
+}
+a:visited {
+    background-color: transparent;
+    text-decoration: none;
+    text-shadow: 2px 2px 5px rgb(0, 255, 0);
+    border-radius: 10px;
+}
+a:hover {
+    color: lightblue;
+    background-color: gray;
+    text-decoration: underline;
+    border-radius: 10px;
+}
+a:active {
+    color: whitesmoke;
+    background-color: #161616;
+    text-decoration: underline;
+    border-radius: 10px;
+}
+mark {
+    background-color: rgba(255, 68, 0, 0.096);
+    color: rgb(255, 155, 119);
+    text-shadow: -2px -2px 5px #FF0000;
+}
+.button {
+    background-color: orangered;
+    border: none;
+    color: whitesmoke;
+    padding: 15px 32px;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    margin: 4px 2px;
+    cursor: none;
+}
+input {
+    background-color: #161616;
+    text-shadow: rgba(0, 255, 0, 0.281) 1px 1px 5px;
+    color: whitesmoke;
+    cursor: none;
+}
+h1 {
+    text-shadow: 4px 4px 3px #FF0000, -2px -2px 5px #0000FF;
+    color: black;
+    text-align: center;
+}
+h2 {
+    text-align: center;
+}
+h3 {
+    text-align: center;
+}
+h4 {
+    text-align: center;
+}
+/* Keyframes für das warme Pulsieren */
+@keyframes warmPulse {
+    0% { background: rgba(0, 0, 255, 0.1); box-shadow: 0 0 5px rgba(0, 0, 255, 0.2); }
+    50% { background: rgba(0, 0, 255, 0.3); box-shadow: 0 0 20px rgba(0, 0, 255, 0.5); }
+    100% { background: rgba(0, 0, 255, 0.1); box-shadow: 0 0 5px rgba(0, 0, 255, 0.2); }
+}
+/* Standard-Button */
+.button {
+    padding: 12px 24px;
+    border: none;
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+    cursor: none;
+    background: rgba(0, 0, 255, 0.1); /* 10% Blau, 90% Transparent */
+    border-radius: 50px;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+/* Hover-Effekt: Button bleibt unten */
+.button:hover {
+    animation: warmPulse 2s infinite ease-in-out;
+    transform: translateY(5px); /* Button bewegt sich nach unten und bleibt */
+    box-shadow: 0 0 20px rgba(0, 0, 255, 0.5); /* Starker Glow-Effekt */
+}
+/* Wenn die Maus weggeht, springt der Button zurück */
+.button:not(:hover) {
+    transform: translateY(0);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+html {
+    scroll-behavior: smooth;
+    scrollbar-color: gray;
+}
+/* Tabelle Styling */
+table {
+    border-collapse: separate; /* Erlaubt border-radius */
+    border: 5px outset whitesmoke; /* Erzeugt den "outset"-Effekt */
+    border-radius: 10px; /* Abgerundete Ecken */
+    background-color: rgba(255, 255, 255, 0.1); /* Start-Transparenz */
+    box-shadow: 0 0 10px rgba(0, 132, 255, 0.5); /* Anfangsglow */
+    animation: glowEffect 2s infinite alternate ease-in-out; /* Blauer Leuchteffekt */
+    width: auto; /* Passt die Breite automatisch an den Inhalt an */
+    padding: 20px; /* Abstand innerhalb der Tabelle */
+    margin: 20px; /* Abstand nach außen */
+}
+
+/* Zellen Styling */
+th, td {
+    padding: 10px;
+    text-align: left;
+    border: 2px outset lightblue;
+    border-radius: 5px;
+}
+
+/* Animation für den blauen Glow */
+@keyframes glowEffect {
+    0% {
+        box-shadow: 0 0 10px rgba(55, 0, 255, 0.719);
+    }
+    100% {
+        box-shadow: 0 0 20px rgb(0, 162, 255);
+    }
+}
+/* Basis-Styling */
+body {
+    background-color: #161616;
+    color: whitesmoke;
+    font-family: Arial, sans-serif;
+    cursor: none; /* Versteckt den normalen Mauszeiger */
+    overflow: hidden; /* Verhindert Scroll-Probleme durch große Klick-Effekte */
+}
+
+/* Blauer pulsierender Kreis als Cursor */
+.cursor {
+    position: fixed;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: rgba(0, 122, 255, 0.7); /* Blau mit leichter Transparenz */
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    transition: transform 0.05s ease-out;
+    animation: pulse 1.5s infinite alternate ease-in-out;
+}
+
+/* Klick-Effekt */
+.click-effect {
+    position: fixed;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: rgba(0, 122, 255, 0.8);
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    animation: clickAnimation 0.5s ease-out;
+}
+
+/* Pulsierende Animation */
+@keyframes pulse {
+    0% {
+        transform: translate(-50%, -50%) scale(1);
+        box-shadow: 0 0 5px rgba(0, 122, 255, 0.6);
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(1.4);
+        box-shadow: 0 0 15px rgba(0, 122, 255, 1);
+    }
+}
+
+/* Klick-Wellen-Animation */
+@keyframes clickAnimation {
+    0% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(5);
+        opacity: 0;
+    }
+}
+/* Basis-Stil für den Button */
+.modelbutton {
+    width: 150px;
+    height: 50px;
+    background-color: whitesmoke; /* Hintergrundfarbe */
+    color: #007bff; /* Blaue Schriftfarbe */
+    font-size: 16px;
+    font-weight: bold;
+    border: 2px solid transparent;
+    cursor: none;
+    border-radius: 8px;
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out, border-color 0.3s ease-in-out;
+    display: inline-block;
+    text-align: center;
+    line-height: 50px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Hover-Effekt: Button bewegt sich leicht nach oben & bekommt pulsierenden blauen Rahmen */
+.modelbutton:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.3);
+    border-color: #007bff;
+    animation: pulse 1s infinite;
+}
+
+/* Klick-Effekt: Button wackelt kurz */
+.modelbutton:active {
+    animation: shake 0.3s ease-in-out;
+}
+
+/* Wackel-Animation */
+@keyframes shake {
+    0% { transform: rotate(0deg); }
+    25% { transform: rotate(3deg); }
+    50% { transform: rotate(-3deg); }
+    75% { transform: rotate(3deg); }
+    100% { transform: rotate(0deg); }
+}
+
+/* Pulsierender blauer Rahmen */
+@keyframes pulse {
+    0% { border-width: 2px; opacity: 1; }
+    50% { border-width: 4px; opacity: 0.6; }
+    100% { border-width: 2px; opacity: 1; }
+}

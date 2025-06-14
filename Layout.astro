@@ -1,0 +1,42 @@
+---
+import "@/pages/_styles.css"
+---
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="icon" type="image/png" href="/favicon.svg">
+  </head>
+  <body>
+    <script>// Cursor erstellen
+      const cursor = document.createElement("div");
+      cursor.classList.add("cursor");
+      document.body.appendChild(cursor);
+      
+      // Bewege den Cursor mit der Maus
+      document.addEventListener("mousemove", (e) => {
+          cursor.style.left = `${e.clientX}px`;
+          cursor.style.top = `${e.clientY}px`;
+      });
+      
+      // Klick-Effekt
+      document.addEventListener("click", (e) => {
+          const clickEffect = document.createElement("div");
+          clickEffect.classList.add("click-effect");
+          clickEffect.style.left = `${e.clientX}px`;
+          clickEffect.style.top = `${e.clientY}px`;
+          document.body.appendChild(clickEffect);
+      
+          setTimeout(() => {
+              clickEffect.remove();
+          }, 500);
+      });      
+    </script>
+	<header>
+		<a href="/" class="button">Home</a>
+		<a href="/models" class="button">3D Models</a>
+    <a href="/login" class="button">Login</a>
+		<a href="/signup" class="button">Sign up</a>
+	</header>
+	<slot />
+</body>
+</html>
